@@ -3,11 +3,23 @@
 TeleZero is a lightweight (~350 KB) TypeScript autonomous agent that runs via Telegram and a local dashboard without Docker. It uses an LLM reasoning loop with real tools, stores conversations and jobs in SQLite, and supports cron-based background tasks.
 
 > TeleZero is in beta and not recommended for production use yet.
+> Note: Use at your own risk. The agent can access files in your folders/repositories based on granted tool capabilities.
 
 **Author:** [ronaldaug](https://github.com/ronaldaug)  
 **Project page:** [ai.jsx.pm](https://ai.jsx.pm)
 
 <img src="https://i.ibb.co/nNYJRFrn/telezero.webp" width="80%" />
+
+---
+
+## Why another claw tool?
+
+I wanted a practical OpenClaw alternative that is simple, lightweight, and gets the job done.
+
+- OpenClaw is around 400 MB and can be hard to track end-to-end behavior.
+- TeleZero is around 350 KB and is intentionally easier to inspect so you can understand what the code is doing.
+- Many claw-style tools rely on Docker containers (for example, thepeoplebot). Running containers all day can consume significant RAM.
+- TeleZero is designed to run directly and be triggered from Telegram webhook flows, avoiding a container-heavy always-on setup.
 
 ---
 
