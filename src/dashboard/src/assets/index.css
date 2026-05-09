@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@theme {
+    --color-cyber-dark: #0a0a0c;
+    --color-cyber-darker: #050506;
+    --color-cyber-blue: #00f2ff;
+    --color-cyber-green: #00ff9d;
+    --color-cyber-purple: #bc00ff;
+    --color-cyber-pink: #ff00ea;
+
+    --font-jura: "Jura", sans-serif;
+
+    --shadow-neon-blue: 0 0 10px rgba(0, 242, 255, 0.5), 0 0 20px rgba(0, 242, 255, 0.2);
+    --shadow-neon-green: 0 0 10px rgba(0, 255, 157, 0.5), 0 0 20px rgba(0, 255, 157, 0.2);
+}
+
+body {
+    background-color: #050506;
+    color: #fff;
+}
+
+.cyber-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.cyber-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.cyber-card-green {
+    border-color: rgba(0, 255, 157, 0.3);
+}
+
+.cyber-card-green:hover {
+    border-color: rgba(0, 255, 157, 0.5);
+}
+
+.text-glow-blue {
+    text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+}
+
+.shadow-neon-blue {
+    box-shadow: 0 0 10px rgba(0, 242, 255, 0.5), 0 0 20px rgba(0, 242, 255, 0.2);
+}
+
+.shadow-neon-green {
+    box-shadow: 0 0 10px rgba(0, 255, 157, 0.5), 0 0 20px rgba(0, 255, 157, 0.2);
+}
+
+.badge-cyber {
+    display: inline-block;
+    padding: 4px 12px;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: 4px;
+}
+
+.badge-cyber-blue {
+    background: rgba(0, 242, 255, 0.1);
+    border: 1px solid rgba(0, 242, 255, 0.3);
+    color: #00f2ff;
+}
+
+.badge-cyber-green {
+    background: rgba(0, 255, 157, 0.1);
+    border: 1px solid rgba(0, 255, 157, 0.3);
+    color: #00ff9d;
+}
+
+.btn-cyber {
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+}
+
+.btn-cyber-primary {
+    background: rgba(0, 242, 255, 0.1);
+    border: 1px solid rgba(0, 242, 255, 0.3);
+    color: #00f2ff;
+}
+
+.btn-cyber-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+@keyframes marquee-vertical {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-50%); }
+}
+
+.animate-marquee-vertical {
+    animation: marquee-vertical 30s linear infinite;
+}
+
+.animate-marquee-vertical:hover {
+    animation-play-state: paused;
+}

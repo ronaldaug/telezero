@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeleZero - Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .scanline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to bottom, transparent, #00f2ff, transparent);
+            opacity: 0.3;
+            animation: scanline 3s linear infinite;
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        @keyframes scanline {
+            0% {
+                top: -4px;
+            }
+
+            100% {
+                top: 100vh;
+            }
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden min-h-screen">
+    <div id="root"></div>
+
+    <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>
