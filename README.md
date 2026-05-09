@@ -12,6 +12,17 @@ TeleZero is a lightweight (~226 KB) TypeScript autonomous agent that runs via Te
 
 ---
 
+## Why telezero?
+
+I wanted something like OpenClaw, but simpler: small, light, works with free models, and easy to read the code.
+
+- OpenClaw is huge (about 400 MB). It can be hard to see what it is doing under the hood.
+- TeleZero is about 226 KB. You can open the files and follow how it works.
+- A lot of similar tools use Docker. Docker uses RAM even when it is just sitting there.
+- TeleZero runs without Docker. You can hook it up to Telegram with webhooks and avoid keeping big containers running all day.
+
+---
+
 ## Quick Start
 
 1. Run interactive setup:
