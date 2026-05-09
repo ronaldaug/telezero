@@ -1,0 +1,89 @@
+{
+  "provider": "openai",
+  "modelId": "glm-4.7-flash",
+  "modelProviders": {
+    "openai": [
+      {
+        "id": "glm-4.7-flash",
+        "name": "GLM 4.7 flash",
+        "baseUrl": "https://coder.augusthost.workers.dev/v1",
+        "envKey": "GLM_API_KEY"
+      },
+      {
+        "id": "qwen3.5-flash",
+        "name": "Qwen3.5 Flash",
+        "baseUrl": "https://api.tokenmix.ai/v1",
+        "envKey": "TOKEN_MAX_API_KEY"
+      }
+    ],
+    "openrouter": [
+      {
+        "id": "minimax/minimax-m2.5:free",
+        "name": "Minimax-m2.5 (free)",
+        "baseUrl": "https://openrouter.ai/api/v1",
+        "envKey": "OPENROUTER_API_KEY"
+      },
+      {
+        "id": "z-ai/glm-4.5-air:free",
+        "name": "GLM 4.5 Air (free)",
+        "baseUrl": "https://openrouter.ai/api/v1",
+        "envKey": "OPENROUTER_API_KEY"
+      },
+      {
+        "id": "openai/gpt-oss-20b:free",
+        "name": "GPT OSS 20B (free)",
+        "baseUrl": "https://openrouter.ai/api/v1",
+        "envKey": "OPENROUTER_API_KEY"
+      },
+      {
+        "id": "qwen/qwen3.5-flash-02-23",
+        "name": "Qwen3.5 Flash 02-23 ($0.05/M)",
+        "baseUrl": "https://openrouter.ai/api/v1",
+        "envKey": "OPENROUTER_API_KEY"
+      },
+      {
+        "id": "google/gemma-4-26b-a4b-it",
+        "name": "Gemma 4 26B ($0.06/M)",
+        "baseUrl": "https://openrouter.ai/api/v1",
+        "envKey": "OPENROUTER_API_KEY"
+      },
+      {
+        "id": "z-ai/glm-4.7-flash",
+        "name": "GLM 4.7 Flash ($0.06/M)",
+        "baseUrl": "https://openrouter.ai/api/v1",
+        "envKey": "OPENROUTER_API_KEY"
+      }
+    ],
+    "qwen": [
+      {
+        "id": "qwen3-coder-flash",
+        "name": "Qwen3 Coder Flash (Free tier ended, not working)",
+        "baseUrl": "https://portal.qwen.ai/v1"
+      },
+      {
+        "id": "qwen-coder-plus",
+        "name": "Qwen Coder Plus (Free tier ended, not working))",
+        "baseUrl": "https://portal.qwen.ai/v1"
+      }
+    ],
+    "ollama": [
+      {
+        "id": "qwen3",
+        "name": "Ollama",
+        "baseUrl": "http://localhost:11434/v1"
+      }
+    ],
+    "gemini": [
+      {
+        "id": "gemini-3-flash-preview",
+        "name": "Gemini 3 Flash (preview)",
+        "envKey": "GEMINI_API_KEY"
+      },
+      {
+        "id": "gemini-2.5-flash",
+        "name": "Gemini 2.5 Flash (preview)",
+        "envKey": "GEMINI_API_KEY"
+      }
+    ]
+  }
+}
