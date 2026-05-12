@@ -8,6 +8,7 @@ data/
 .DS_Store
 coverage/
 src/workspace/skills/*
+!src/workspace/skills/weather
 src/workspace/context/*
 # Dashboard build output
 public/assets/*.css

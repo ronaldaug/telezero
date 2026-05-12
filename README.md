@@ -8,7 +8,7 @@ TeleZero is a lightweight (~226 KB) TypeScript autonomous agent that runs via Te
 **Author:** [ronaldaug](https://github.com/ronaldaug)  
 **Project page:** [ai.jsx.pm](https://ai.jsx.pm)
 
-<a href="https://www.youtube.com/watch?v=ojePCiPpQ2g" target="_blank"><img src="public/assets/telezero.webp" width="80%" /></a>
+<a href="https://www.youtube.com/watch?v=ojePCiPpQ2g" target="_blank"><img src="public/telezero.webp" width="80%" /></a>
 
 ---
 
