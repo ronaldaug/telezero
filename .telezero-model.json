@@ -1,6 +1,6 @@
 {
-  "provider": "openai",
-  "modelId": "glm-4.7-flash",
+  "provider": "openrouter",
+  "modelId": "minimax/minimax-m2.5:free",
   "modelProviders": {
     "openai": [
       {
