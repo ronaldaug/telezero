@@ -87,7 +87,7 @@ async function main() {
     console.log('  • Starting dashboard on http://localhost:1337...');
     const dashboardProc = spawn('npx', ['tsx', '--watch', 'src/dashboard/real-server.ts'], {
         stdio: 'inherit',
-        env: { ...process.env, PORT: '1337' }
+        env: { ...process.env, PORT: '1337', TELEGRAM_AUTO_START: 'false' },
     });
     processes.push(dashboardProc);
 

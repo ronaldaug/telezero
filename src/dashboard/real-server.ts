@@ -4,7 +4,6 @@ import { promises as fs, existsSync } from 'node:fs';
 import * as os from 'os';
 import crypto from 'crypto';
 import cookieParser from 'cookie-parser';
-import { db } from '../database/index.js';
 import { runTask, type ConversationMessage } from '../agent/agentController.js';
 import { QwenCodeHandler } from '../services/qwen-provider.js';
 import {
@@ -30,11 +29,14 @@ import {
   AGENT_LOOP_STEPS_MIN,
   AGENT_LOOP_STEPS_MAX,
 } from '../config/agentLoopSteps.js';
+import { db, migrate } from '../database/index.js';
+
+migrate();
 
 const require = createRequire(import.meta.url);
 
 const app = express();
-const PORT = process.env.PORT || 1337;
+const PORT = parseInt(process.env.PORT || '80', 10);
 const serverStartTime = new Date();
 
 // Serve static files from the public directory
@@ -602,6 +604,20 @@ app.post('/api/reset', async (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Dashboard server running on http://localhost:${PORT}`);
+
+  // Render (and similar) usually run this HTTP server only. Polling must start here;
+  // `src/index.ts` is a separate entrypoint used for bot-only / local agent processes.
+  const token = process.env.TELEGRAM_BOT_TOKEN?.trim();
+  const autoStart = process.env.TELEGRAM_AUTO_START !== 'false';
+  if (token && autoStart) {
+    void startBot()
+      .then(() => console.log('[Telegram] Long polling started with the dashboard server.'))
+      .catch((err) => console.error('[Telegram] Failed to start polling:', err));
+  } else if (token && !autoStart) {
+    console.log(
+      '[Telegram] TELEGRAM_AUTO_START=false — start polling from the dashboard (Telegram controls) or POST /api/telegram/polling/start.',
+    );
+  }
 });
 
 export default app;

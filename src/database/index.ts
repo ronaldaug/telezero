@@ -4,7 +4,32 @@ import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const DB_PATH = process.env.DATABASE_URL || 'data/telezero.db';
+
+/**
+ * SQLite file path. Hosts such as Render set `DATABASE_URL` to a `postgres://`
+ * (or similar) URL when a managed database is attached; that must not be used
+ * as a SQLite path.
+ */
+function resolveSqliteDatabasePath(): string {
+    const explicit =
+        process.env.TELEZERO_SQLITE_PATH?.trim() || process.env.SQLITE_DATABASE_PATH?.trim();
+    if (explicit) {
+        return explicit;
+    }
+
+    const databaseUrl = process.env.DATABASE_URL?.trim();
+    if (!databaseUrl) {
+        return 'data/telezero.db';
+    }
+
+    if (/^(postgres(ql)?|mysql|mariadb):\/\//i.test(databaseUrl)) {
+        return 'data/telezero.db';
+    }
+
+    return databaseUrl;
+}
+
+const DB_PATH = resolveSqliteDatabasePath();
 
 // Ensure data directory exists
 const dbDir = dirname(DB_PATH);

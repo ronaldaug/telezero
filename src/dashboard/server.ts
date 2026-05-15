@@ -3,7 +3,7 @@ import path from 'path';
 import { existsSync, promises as fs } from 'node:fs';
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = parseInt(process.env.PORT || '80', 10);
 
 // Serve static files from the public directory
 app.use(express.static(path.join(process.cwd(), 'public')));
@@ -122,7 +122,7 @@ app.post('/api/qwen-refresh', async (req, res) => {
   try {
     // Simulate token refresh
     await new Promise(resolve => setTimeout(resolve, 1000));
-    
+
     // In a real implementation, this would call the actual Qwen refresh logic
     const newStatus = {
       ...mockStatusData.qwenAuth,
@@ -130,7 +130,7 @@ app.post('/api/qwen-refresh', async (req, res) => {
       tokenExpiry: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString(),
       lastRefresh: new Date().toISOString()
     };
-    
+
     res.json({ success: true, status: newStatus });
   } catch (error) {
     res.status(500).json({ success: false, error: 'Failed to refresh token' });
